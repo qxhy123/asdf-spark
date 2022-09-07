@@ -39,7 +39,7 @@ get_download_file_path() {
   local version=$1
   local tmp_download_dir=$2
 
-  local pkg_name="spark-${version}-bin-hadoop2.7.tgz"
+  local pkg_name="spark-${version}-bin-hadoop3.tgz"
 
   echo "$tmp_download_dir/$pkg_name"
 }
@@ -47,8 +47,8 @@ get_download_file_path() {
 
 get_download_url() {
   local version=$1
-  local default="https://www.apache.org/dist/spark/spark-${version}/spark-${version}-bin-hadoop2.7.tgz"
-  local fallback="https://archive.apache.org/dist/spark/spark-${version}/spark-${version}-bin-hadoop2.7.tgz"
+  local default="https://www.apache.org/dist/spark/spark-${version}/spark-${version}-bin-hadoop3.tgz"
+  local fallback="https://archive.apache.org/dist/spark/spark-${version}/spark-${version}-bin-hadoop3.tgz"
 
   if wget -q --spider "$default"; then
     echo $default
